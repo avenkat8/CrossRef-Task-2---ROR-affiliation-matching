@@ -6,7 +6,7 @@ import pandas as pd
 
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
-from google.colab import drive
+
 import os
 import time
 
@@ -18,19 +18,16 @@ import csv
 
 pp = pp.PrettyPrinter(indent=4)
 
-# Mount Google Drive
-drive.mount('/content/drive')
-SAVE_PATH = "/content/drive/My Drive/CrossRef_ROR/"
-os.makedirs(SAVE_PATH, exist_ok=True)
+"""
+Sample Crossref API parameters
 
-# API Configurations
-
-# Crossref
 BASE_URL = "https://api.crossref.org/works"
 FILTERS = "type:journal-article,has-ror-id:true,from-pub-date:2024-10-01,until-pub-date:2024-12-31"
-POLITE = "aravindvenkatesan@gmail.com"
+POLITE = "sample@gmail.com"
 ROWS = 1000  # Maximum number of records per API call
-TOTAL_RESULTS = 13322#12406#61834  # Known total results from API
+TOTAL_RESULTS = 13322 # Known total results from API
+"""
+
 
 """
 Fetches affiliation data from CrossRef API and extracts unique ROR IDs.
